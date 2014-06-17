@@ -1,0 +1,24 @@
+PROJECT 4 WRITE-UP
+------------------
+
+1) Briefly explain how you implemented comparison queries and how they affected your control block's signals (in a few sentences).
+
+We represented the comparison register with a 2-bit value, 0 bit indicating if it was equal and the 1 bit indicating if it was less than/greater than.
+If false it would be a No op, if true it sends in the signals from the instruction.
+
+2) Please list your control block's control signals, and briefly explain what each one does (in a sentence or less each).
+
+MEM_STR - indicates where you store in memory.
+MEM_?LD - indicates where you load to memory.
+RG_?WR - indicates where you write to register.
+CR_? - whether you write to the comparison register.
+PREP_JMP - indicates whether you jump to immediate or register value.
+
+3) What features (if any) of this assembly language do you like?
+
+We liked how the addresses were 24 bits, so you could jump immediately to another register. We also liked how it was case insensitive.
+
+4) What features (if any) of this assembly language do you not like?
+
+The comparison queries were a little unintuitive to us at first. 
+

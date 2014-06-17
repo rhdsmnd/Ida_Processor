@@ -1,0 +1,22 @@
+SUB %14 %0 0
+JUMP @Start
+ADD %6 %0 123
+Start: ADD %0 %0 1
+ADD %1 %0 1
+SLL %2 %1 1
+CMPU %1 %2
+ADD ?GE %1 %1 %2
+ADD ?LT %3 %1 %2
+
+	SUB %4 %0 %3
+Loop:	CMPS %4 %3
+	SAVE %4 %3 100
+	LOAD %5 %3 100
+	ADD %4 %4 1
+	JUMP ?LT @Loop
+	ADD %10 %0 100
+	SUB %14 %14 1
+	LINK @Start
+	CMPS %14 -1
+	JUMP ?GE Start
+	ADD %15 %0 15
